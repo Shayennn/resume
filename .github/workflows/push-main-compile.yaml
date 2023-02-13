@@ -10,6 +10,8 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: resume.tex
+      - name: Rename resume
+        run: mv resume.pdf Phitchawat_Lukkanathiti_Resume.pdf
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
