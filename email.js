@@ -6,9 +6,9 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const fs = require('fs'),
   fileType = 'application/pdf',
   filename = 'Phitchawat_Lukkanathiti_Resume.pdf',
-  data = fs.readFileSync('attachments/' + filename),
+  data = fs.readFileSync(filename),
   filename_t = 'Phitchawat_Lukkanathiti_Resume_with_transcript.pdf',
-  data_t = fs.readFileSync('attachments/' + filename);
+  data_t = fs.readFileSync(filename);
 
 const msg = {
   to: 'github-resume@phitchaw.at',
