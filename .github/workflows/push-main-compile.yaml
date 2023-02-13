@@ -24,3 +24,8 @@ jobs:
         with:
           name: Phitchawat_Lukkanathiti_Resume_with_transcript
           path: Phitchawat_Lukkanathiti_Resume_with_transcript.pdf
+      - name: Send Email Notification
+        uses: peter-evans/sendgrid-action@v1.0.1
+        env:
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+          SCRIPT_FILEPATH: ./email.js
