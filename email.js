@@ -8,7 +8,7 @@ const fs = require('fs'),
   filename = 'Phitchawat_Lukkanathiti_Resume.pdf',
   data = fs.readFileSync(filename),
   filename_t = 'Phitchawat_Lukkanathiti_Resume_with_transcript.pdf',
-  data_t = fs.readFileSync(filename);
+  data_t = fs.readFileSync(filename_t);
 
 const msg = {
   to: 'github-resume@phitchaw.at',
