@@ -48,4 +48,6 @@ jobs:
           makeLatest: true
           name: ${{ steps.semver.outputs.next }}
           token: ${{ github.token }}
+          commit: ${{ github.sha }}
+          tag: ${{ steps.semver.outputs.next }}
           artifacts: "Phitchawat_Lukkanathiti_Resume*.pdf"
