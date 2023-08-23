@@ -51,3 +51,4 @@ jobs:
           commit: ${{ github.sha }}
           tag: ${{ steps.semver.outputs.next }}
           artifacts: "Phitchawat_Lukkanathiti_Resume*.pdf"
+          artifactContentType: "application/pdf"
