@@ -2,6 +2,9 @@ name: Build LaTeX document
 on: [push]
 jobs:
   build_release:
+    permissions:
+      contents: read
+      packages: write
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
