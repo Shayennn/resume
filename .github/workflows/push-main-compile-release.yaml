@@ -6,6 +6,12 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
+      - name: Get Next Version
+        id: semver
+        uses: ietf-tools/semver-action@v1
+        with:
+          token: ${{ github.token }}
+          branch: main
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
@@ -29,12 +35,6 @@ jobs:
         env:
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
           SCRIPT_FILEPATH: ./email.js
-      - name: Get Next Version
-        id: semver
-        uses: ietf-tools/semver-action@v1
-        with:
-          token: ${{ github.token }}
-          branch: main
       - name: Create Release
         uses: ncipollo/release-action@v1.12.0
         with:
