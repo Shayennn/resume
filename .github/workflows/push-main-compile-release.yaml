@@ -3,7 +3,7 @@ on: [push]
 jobs:
   build_release:
     permissions:
-      contents: read
+      contents: write
       packages: write
     runs-on: ubuntu-latest
     steps:
