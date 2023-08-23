@@ -15,6 +15,7 @@ jobs:
         id: semver
         uses: ietf-tools/semver-action@v1
         with:
+          patchAll: true
           token: ${{ github.token }}
           branch: main
       - name: Compile LaTeX document
