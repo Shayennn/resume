@@ -22,6 +22,8 @@ jobs:
           patchAll: true
           token: ${{ github.token }}
           branch: main
+      - name: Remove Watermark
+        run: sed -i '/atermark/d' resume.tex & sed -i '/atermark/d' resume_transcript.tex
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
