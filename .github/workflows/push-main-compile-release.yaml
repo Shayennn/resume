@@ -22,6 +22,8 @@ jobs:
           patchAll: true
           token: ${{ github.token }}
           branch: main
+      - name: Put Next Version in Env
+        run: echo "NEXT_VERSION=${{ steps.semver.outputs.next }}" >> $GITHUB_ENV
       - name: Remove Watermark
         run: sed -i '/atermark/d' resume.tex & sed -i '/atermark/d' resume_transcript.tex
       - name: Compile LaTeX document

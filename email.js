@@ -10,11 +10,13 @@ const fs = require('fs'),
   filename_t = 'Phitchawat_Lukkanathiti_Resume_with_transcript.pdf',
   data_t = fs.readFileSync(filename_t);
 
+const tag = process.env.NEXT_VERSION;
+
 const msg = {
   to: 'github-resume@phitchaw.at',
   from: 'github@phitchaw.at',
-  subject: 'Phitchawat Resume',
-  text: 'Your resume is compiled and attached.',
+  subject: `Phitchawat Resume ${tag}`,
+  text: `Your resume ${tag} is compiled and attached.`,
   attachments: [
     {
       content: data.toString('base64'),
