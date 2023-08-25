@@ -1,0 +1,29 @@
+name: PR Build Draft LaTeX document
+# on pr create or update by me
+on: [pull_request]
+jobs:
+  build_example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v3
+      - name: Remove Watermark
+        run: sed -i '/atermark/d' resume.tex & sed -i '/atermark/d' resume_transcript.tex
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: |
+            resume.tex
+            resume_transcript.tex
+      - name: Rename resume
+        run: (mv resume.pdf DRAFT_Phitchawat_Lukkanathiti_Resume.pdf && mv resume_transcript.pdf DRAFT_Phitchawat_Lukkanathiti_Resume_with_transcript.pdf )
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v3
+        with:
+          name: DRAFT_Phitchawat_Lukkanathiti_Resume
+          path: DRAFT_Phitchawat_Lukkanathiti_Resume.pdf
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v3
+        with:
+          name: DRAFT_Phitchawat_Lukkanathiti_Resume_with_transcript
+          path: DRAFT_Phitchawat_Lukkanathiti_Resume_with_transcript.pdf
