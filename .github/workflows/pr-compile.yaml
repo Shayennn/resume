@@ -19,9 +19,6 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: DRAFT_Phitchawat_Lukkanathiti_Resume
-          path: DRAFT_Phitchawat_Lukkanathiti_Resume.pdf
-      - name: Upload PDF file
-        uses: actions/upload-artifact@v3
-        with:
-          name: DRAFT_Phitchawat_Lukkanathiti_Resume_with_transcript
-          path: DRAFT_Phitchawat_Lukkanathiti_Resume_with_transcript.pdf
+          path: |
+            DRAFT_Phitchawat_Lukkanathiti_Resume.pdf
+            DRAFT_Phitchawat_Lukkanathiti_Resume_with_transcript.pdf

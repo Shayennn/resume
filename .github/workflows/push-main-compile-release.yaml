@@ -34,12 +34,9 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Phitchawat_Lukkanathiti_Resume
-          path: Phitchawat_Lukkanathiti_Resume.pdf
-      - name: Upload PDF file
-        uses: actions/upload-artifact@v3
-        with:
-          name: Phitchawat_Lukkanathiti_Resume_with_transcript
-          path: Phitchawat_Lukkanathiti_Resume_with_transcript.pdf
+          path: |
+            Phitchawat_Lukkanathiti_Resume.pdf
+            Phitchawat_Lukkanathiti_Resume_with_transcript.pdf
       - name: Send Email Notification
         uses: peter-evans/sendgrid-action@v1.0.1
         env:
