@@ -1,9 +1,15 @@
 name: Build LaTeX document
-# on push to main by me
+# on push to main when workflow, .tex .pdf or .js files change
 on:
   push:
     branches:
       - main
+    paths:
+      - '.github/**'
+      - '**.tex'
+      - '**.pdf'
+      - '**.js'
+
 jobs:
   build_release:
     permissions:
