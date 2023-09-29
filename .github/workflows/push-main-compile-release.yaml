@@ -32,6 +32,8 @@ jobs:
         run: echo "NEXT_VERSION=${{ steps.semver.outputs.next }}" >> $GITHUB_ENV
       - name: Remove Watermark
         run: sed -i '/atermark/d' resume.tex & sed -i '/atermark/d' resume_transcript.tex
+      - name: Add Version to RESUMEVERSION
+        run: sed -i "s/RESUMEVERSION/${{ steps.semver.outputs.next }}/g" base.tex
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
